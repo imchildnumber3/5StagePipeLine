@@ -1,0 +1,11 @@
+
+module PC(
+	input wire [32:0] PC_in,
+	input CLK,
+	output reg [32:0] PC_out);
+
+	always @(posedge CLK) begin
+		PC_out = PC_in;
+	end
+	
+end

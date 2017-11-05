@@ -1,0 +1,11 @@
+module forwarding (
+	input wire [4:0] rs,
+	input wire [4:0] rt, 
+	input wire [4:0] rd,
+	input wire [4:0] rd2,
+	
+	output reg mux1, 
+	output reg mux2);
+	
+	
+	

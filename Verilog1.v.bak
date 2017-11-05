@@ -1,0 +1,29 @@
+// file register.v
+
+module register(
+    input wire clock,
+    input wire reset,
+    input wire write_data in,
+	 input wire write_address,
+	 input wire WriteEnable,
+	 input wire read_address_debug, 
+	 input wire clock_debug,
+    input wire [4:0] read_address_1,
+	 input wire [4:0] read_address_2,
+    output reg [31:0] data_out_1,
+	 output reg	[31:0] data_out_2,
+	 output reg [31:0] data_out_debug);
+
+    always @(posedge clock) begin
+        if (reset == 1'b1) begin
+            data_out_1 <= 32'h0;
+				data_out_2 <= 32'h0;
+				data_out_debug <= 32'h0;
+        end else if (WriteEnable == 1'b1) begin
+            data_out_1 <= read_address_1;
+        end else begin
+            data_out_2 <= data_out_2;
+        end
+    end
+
+endmodule

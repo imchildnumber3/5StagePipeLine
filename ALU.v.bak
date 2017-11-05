@@ -1,0 +1,20 @@
+module ALU ( 
+	input wire code,
+	input wire clk,
+	input wire variable1,
+	input wire variable2,
+	output reg result)
+	
+always @(posedge clk) begin
+	switch(code) {
+		case
+		result = variable1 + variable2;
+		case
+		result = variable1 - variable2;
+		case
+		result = variable1 && variable2;
+		case
+		result = variable1 || variable2;
+	
+endmodule
+	

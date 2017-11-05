@@ -1,0 +1,10 @@
+module shift(
+	input wire[7:0] input,
+	output reg [7:] output);
+	
+
+	always begin
+		output = input >> 2;
+	end
+	
+endmodule 
